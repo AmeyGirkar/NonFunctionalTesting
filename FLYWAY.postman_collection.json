@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "0b00a16c-5ea6-46cb-b1a6-22d6f547f3a9",
+		"name": "FLYWAY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignUP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Fly Away - Register\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://3.84.30.56:8080/FlyAway//signupaction?email_id=girkar@gmail.com&pwd=user&pwd2=user&name=girkar&address=California&city=California",
+					"protocol": "http",
+					"host": [
+						"3",
+						"84",
+						"30",
+						"56"
+					],
+					"port": "8080",
+					"path": [
+						"FlyAway",
+						"",
+						"signupaction"
+					],
+					"query": [
+						{
+							"key": "email_id",
+							"value": "girkar@gmail.com"
+						},
+						{
+							"key": "pwd",
+							"value": "user"
+						},
+						{
+							"key": "pwd2",
+							"value": "user"
+						},
+						{
+							"key": "name",
+							"value": "girkar"
+						},
+						{
+							"key": "address",
+							"value": "California"
+						},
+						{
+							"key": "city",
+							"value": "California"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://3.84.30.56:8080/FlyAway/loginaction?email_id=girkar@google.com&pwd=user",
+					"protocol": "http",
+					"host": [
+						"3",
+						"84",
+						"30",
+						"56"
+					],
+					"port": "8080",
+					"path": [
+						"FlyAway",
+						"loginaction"
+					],
+					"query": [
+						{
+							"key": "email_id",
+							"value": "girkar@google.com"
+						},
+						{
+							"key": "pwd",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ViewFlight",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.84.30.56:8080/FlyAway/home?source=1&destination=3",
+					"protocol": "http",
+					"host": [
+						"3",
+						"84",
+						"30",
+						"56"
+					],
+					"port": "8080",
+					"path": [
+						"FlyAway",
+						"home"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "1"
+						},
+						{
+							"key": "destination",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookFlight",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.84.30.56:8080/FlyAway/bookflight?id=8",
+					"protocol": "http",
+					"host": [
+						"3",
+						"84",
+						"30",
+						"56"
+					],
+					"port": "8080",
+					"path": [
+						"FlyAway",
+						"bookflight"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConfirmBooking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://3.84.30.56:8080/FlyAway/completepurchase"
+			},
+			"response": []
+		}
+	]
+}
